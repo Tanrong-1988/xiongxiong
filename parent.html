@@ -73,6 +73,77 @@
 </head>
 <body>
 
+<!-- Header -->
+<div class="header">
+  <div class="header-avatar">🐻</div>
+  <div class="header-info">
+    <div class="header-title">小熊熊学习进度</div>
+    <div class="header-sub" id="header-sub">加载中...</div>
+  </div>
+  <div class="header-badge" id="header-streak">🔥 0 天连续</div>
+</div>
+
+<a class="back-link" onclick="window.location.href='child.html'">← 返回孩子打卡页</a>
+
+<div class="content">
+  <!-- 无数据提示 -->
+  <div id="no-data-tip" class="no-data" style="display:none">
+    <div class="no-data-icon">📊</div>
+    <div class="no-data-title">暂无学习数据</div>
+    <div class="no-data-sub">请先在「孩子打卡页」完成至少一次学习打卡，<br>数据会自动同步到本页面。</div>
+  </div>
+
+  <!-- 今日概览 -->
+  <div id="section-today" class="today-rec" style="display:none">
+    <div class="today-rec-title" id="today-date">今日打卡</div>
+    <div id="today-detail"></div>
+  </div>
+
+  <!-- 统计卡片 -->
+  <div id="section-stats" class="stat-grid" style="display:none">
+    <div class="stat-card"><div class="stat-label">累计打卡</div><div class="stat-val" id="p-total">0</div></div>
+    <div class="stat-card"><div class="stat-label">最长连续</div><div class="stat-val" id="p-streak">0</div></div>
+    <div class="stat-card"><div class="stat-label">平均星级</div><div class="stat-val" id="p-avg">-</div></div>
+  </div>
+
+  <!-- 月度日历 -->
+  <div id="section-cal" class="card" style="display:none">
+    <div class="card-title" id="p-cal-title">打卡日历</div>
+    <div class="cal-grid" id="p-days-label"></div>
+    <div class="cal-grid" id="p-cal-grid"></div>
+  </div>
+
+  <!-- 学科时长 -->
+  <div id="section-subjects" class="card" style="display:none">
+    <div class="card-title">学科学习时长</div>
+    <div id="subject-bars"></div>
+  </div>
+
+  <!-- 趋势图 -->
+  <div id="section-trend" class="card" style="display:none">
+    <div class="card-title">近7天学习趋势</div>
+    <div class="chart-wrap"><canvas id="p-trendChart"></canvas></div>
+  </div>
+
+  <!-- 成就徽章 -->
+  <div id="section-badges" class="card" style="display:none">
+    <div class="card-title">成就徽章</div>
+    <div class="badge-grid" id="p-badge-grid"></div>
+  </div>
+
+  <!-- 困难记录 -->
+  <div id="section-notes" class="card" style="display:none">
+    <div class="card-title">困难记录本</div>
+    <div id="p-notes-list"></div>
+  </div>
+
+  <!-- 个性化建议 -->
+  <div id="section-insight" class="card" style="display:none">
+    <div class="card-title">个性化建议</div>
+    <div id="insight-content"></div>
+  </div>
+</div>
+
 <script>const SUBJECT_COLORS = {
   cn:{bg:'#EEEDFE',text:'#3C3489',label:'语文',color:'#534AB7'},
   en:{bg:'#E6F1FB',text:'#0C447C',label:'英语',color:'#185FA5'},
